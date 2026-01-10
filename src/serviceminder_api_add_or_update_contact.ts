@@ -1,0 +1,115 @@
+
+import { InputField, OutputField, Branches } from "./types/Schema";
+import { Node } from "./types/Node";
+import {z} from "zod";
+
+const node = {"name":"Add or Update Contact","id":"serviceminder_api_add_or_update_contact","descripition":"Create a new contact or update existing one. Use when customer information needs to be added or modified.","inputSchema": {
+    campaign: {
+      name: "campaign",
+      description: "Marketing campaign",
+      required: false,
+      validationSchema: /.*/,
+      errorMessage: "",
+      input: { type: "text" },
+      parse: (value: string) => { try { return (z.string()).parse(value); } catch { return value; } },
+    },
+    channel: {
+      name: "channel",
+      description: "Lead source channel",
+      required: false,
+      validationSchema: /.*/,
+      errorMessage: "",
+      input: { type: "text" },
+      parse: (value: string) => { try { return (z.string()).parse(value); } catch { return value; } },
+    },
+    zip: {
+      name: "zip",
+      description: "ZIP code",
+      required: false,
+      validationSchema: /.*/,
+      errorMessage: "",
+      input: { type: "text" },
+      parse: (value: string) => { try { return (z.string()).parse(value); } catch { return value; } },
+    },
+    state: {
+      name: "state",
+      description: "State",
+      required: false,
+      validationSchema: /.*/,
+      errorMessage: "",
+      input: { type: "text" },
+      parse: (value: string) => { try { return (z.string()).parse(value); } catch { return value; } },
+    },
+    city: {
+      name: "city",
+      description: "City",
+      required: false,
+      validationSchema: /.*/,
+      errorMessage: "",
+      input: { type: "text" },
+      parse: (value: string) => { try { return (z.string()).parse(value); } catch { return value; } },
+    },
+    address2: {
+      name: "address2",
+      description: "Apartment/unit number",
+      required: false,
+      validationSchema: /.*/,
+      errorMessage: "",
+      input: { type: "text" },
+      parse: (value: string) => { try { return (z.string()).parse(value); } catch { return value; } },
+    },
+    address1: {
+      name: "address1",
+      description: "Street address",
+      required: false,
+      validationSchema: /.*/,
+      errorMessage: "",
+      input: { type: "text" },
+      parse: (value: string) => { try { return (z.string()).parse(value); } catch { return value; } },
+    },
+    company: {
+      name: "company",
+      description: "Company name",
+      required: false,
+      validationSchema: /.*/,
+      errorMessage: "",
+      input: { type: "text" },
+      parse: (value: string) => { try { return (z.string()).parse(value); } catch { return value; } },
+    },
+    email: {
+      name: "email",
+      description: "Email address",
+      required: false,
+      validationSchema: /.*/,
+      errorMessage: "",
+      input: { type: "text" },
+      parse: (value: string) => { try { return (z.string()).parse(value); } catch { return value; } },
+    },
+    phone: {
+      name: "phone",
+      description: "Primary phone number",
+      required: true,
+      validationSchema: /.*/,
+      errorMessage: "",
+      input: { type: "text" },
+      parse: (value: string) => { try { return (z.string()).parse(value); } catch { return value; } },
+    },
+    name: {
+      name: "name",
+      description: "Customer's full name",
+      required: true,
+      validationSchema: /.*/,
+      errorMessage: "",
+      input: { type: "text" },
+      parse: (value: string) => { try { return (z.string()).parse(value); } catch { return value; } },
+    },
+  },"outputSchema": {
+    result: {
+      name: "Result",
+      description: "Output of tool Add or Update Contact from API ServiceMinder API",
+      example: "",
+      validator: (value: any) => true,
+    },
+  },"groups":["ServiceMinder API","Add or Update Contact"],"branches":{"success":{"id":"success","name":"Success","description":"Successful execution"}},"isTriggerNode":false,"cost":0} as Node;
+
+export { node as "serviceminder_api_add_or_update_contact" };
