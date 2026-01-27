@@ -1,0 +1,115 @@
+
+import { InputField, OutputField, Branches } from "./types/Schema";
+import { Node } from "./types/Node";
+import {z} from "zod";
+
+const node = {"name":"Add Contact","id":"psa_api_add_contact","descripition":"Create a new contact in PSA system associated with the configured company.","inputSchema": {
+    phone: {
+      name: "phone",
+      description: "Phone number of the contact",
+      required: false,
+      validationSchema: /.*/,
+      errorMessage: "",
+      input: { type: "text" },
+      parse: (value: string) => { try { return (z.string()).parse(value); } catch { return value; } },
+    },
+    email: {
+      name: "email",
+      description: "Email address of the contact",
+      required: false,
+      validationSchema: /.*/,
+      errorMessage: "",
+      input: { type: "text" },
+      parse: (value: string) => { try { return (z.string()).parse(value); } catch { return value; } },
+    },
+    subregion: {
+      name: "subregion",
+      description: "County/Subregion of the contact",
+      required: false,
+      validationSchema: /.*/,
+      errorMessage: "",
+      input: { type: "text" },
+      parse: (value: string) => { try { return (z.string()).parse(value); } catch { return value; } },
+    },
+    postalCode: {
+      name: "postalCode",
+      description: "Postal/ZIP code of the contact",
+      required: false,
+      validationSchema: /.*/,
+      errorMessage: "",
+      input: { type: "text" },
+      parse: (value: string) => { try { return (z.string()).parse(value); } catch { return value; } },
+    },
+    country: {
+      name: "country",
+      description: "Country of the contact",
+      required: false,
+      validationSchema: /.*/,
+      errorMessage: "",
+      input: { type: "text" },
+      parse: (value: string) => { try { return (z.string()).parse(value); } catch { return value; } },
+    },
+    title: {
+      name: "title",
+      description: "Title of the contact (e.g., Doctor, Mr., Mrs.)",
+      required: false,
+      validationSchema: /.*/,
+      errorMessage: "",
+      input: { type: "text" },
+      parse: (value: string) => { try { return (z.string()).parse(value); } catch { return value; } },
+    },
+    region: {
+      name: "region",
+      description: "Province/State of the contact",
+      required: true,
+      validationSchema: /.*/,
+      errorMessage: "",
+      input: { type: "text" },
+      parse: (value: string) => { try { return (z.string()).parse(value); } catch { return value; } },
+    },
+    city: {
+      name: "city",
+      description: "City of the contact",
+      required: true,
+      validationSchema: /.*/,
+      errorMessage: "",
+      input: { type: "text" },
+      parse: (value: string) => { try { return (z.string()).parse(value); } catch { return value; } },
+    },
+    address: {
+      name: "address",
+      description: "Street address of the contact",
+      required: true,
+      validationSchema: /.*/,
+      errorMessage: "",
+      input: { type: "text" },
+      parse: (value: string) => { try { return (z.string()).parse(value); } catch { return value; } },
+    },
+    lastName: {
+      name: "lastName",
+      description: "Last name of the contact",
+      required: true,
+      validationSchema: /.*/,
+      errorMessage: "",
+      input: { type: "text" },
+      parse: (value: string) => { try { return (z.string()).parse(value); } catch { return value; } },
+    },
+    firstName: {
+      name: "firstName",
+      description: "First name of the contact",
+      required: true,
+      validationSchema: /.*/,
+      errorMessage: "",
+      input: { type: "text" },
+      parse: (value: string) => { try { return (z.string()).parse(value); } catch { return value; } },
+    },
+  },"outputSchema": {
+    result: {
+      name: "Result",
+      description: "Output of tool Add Contact from API PSA API",
+      example: "",
+      validator: (value: any) => true,
+    },
+  },"groups":["PSA API","Add Contact"],"branches":{"success":{"id":"success","name":"Success","description":"Successful execution"}},"isTriggerNode":false,"cost":0} as Node;
+
+export { node as "psa_api_add_contact" };
